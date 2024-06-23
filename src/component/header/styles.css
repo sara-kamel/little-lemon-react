@@ -2,6 +2,7 @@
   display: flex;
   background: rgb(237, 239, 238);
   flex-direction: row;
+  justify-content: center;
   gap: 20px;
 }
 ul {
