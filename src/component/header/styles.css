@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  background: rgb(237, 239, 238);
+  flex-direction: row;
+  gap: 20px;
+}
+ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+a {
+  color: rgb(73 94 32);
+  text-decoration: none;
+}
