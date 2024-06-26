@@ -1,2 +1,3 @@
 # little-lemon-react
-Little Lemon is a webpage for a restaurant by react. 
+
+Little Lemon is a website for a restaurant by react.
