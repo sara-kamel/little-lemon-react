@@ -13,25 +13,25 @@
   border-radius: 12px;
   margin: 10px;
 }
-article {
+.hero-section article {
   padding: 20px;
 }
-article h1 {
+.hero-section h1 {
   font-size: 18pt;
   color: #f4ce14;
   margin-bottom: 0;
 }
-article h2 {
+.hero-section h2 {
   font-size: 12pt;
   margin-top: 0;
 }
-article p {
+.hero-section p {
   width: 90%;
   font-size: small;
 }
-article a {
+.hero-section a {
   background: #f4ce14;
-  border-radius: 10px;
+  border-radius: 16px;
   text-decoration: none;
   padding: 5px;
   display: block;
@@ -39,17 +39,17 @@ article a {
   margin-bottom: 10px;
 }
 @media screen and (min-width: 500px) {
-  article {
+  .hero-section article {
     padding: 20px;
     width: 70%;
   }
-  article h1 {
+  .hero-section h1 {
     font-size: 33pt;
   }
-  article h2 {
+  .hero-section h2 {
     font-size: 18pt;
   }
-  article a {
+  .hero-section a {
     width: 70%;
   }
 }
@@ -66,20 +66,20 @@ article a {
     height: 450px;
     margin-top: 70px;
   }
-  article {
+  .hero-section article {
     width: 35%;
   }
-  article p {
+  .hero-section p {
     width: 70%;
     font-size: large;
   }
-  article h1 {
+  .hero-section h1 {
     font-size: 40pt;
   }
-  article h2 {
+  .hero-section h2 {
     font-size: 24pt;
   }
-  article a {
+  .hero-section a {
     width: 40%;
   }
 }

@@ -1,6 +1,6 @@
 import HeroSection from '../hero-section';
 import Highlights from '../highlights';
-import Testimonials from '../testimonials';
+import CustomersSay from '../customers-say';
 import About from '../about';
 
 export default function HomePage() {
@@ -8,7 +8,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <Highlights />
-      <Testimonials />
+      <CustomersSay/>
       <About />
     </main>
   );

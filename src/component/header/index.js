@@ -11,19 +11,19 @@ export default function Header() {
             <Link to="/">HOME</Link>
           </li>
           <li>
-            <a href="#">ABOUT</a>
+            <a href="/">ABOUT</a>
           </li>
           <li>
-            <a href="#">MENU</a>
+            <a href="/">MENU</a>
           </li>
           <li>
-            <a href="#">RESERVATIONS</a>
+            <a href="/">RESERVATIONS</a>
           </li>
           <li>
-            <a href="#">ORDER ONLINE</a>
+            <a href="/">ORDER ONLINE</a>
           </li>
           <li>
-            <a href="#">LOGIN</a>
+            <a href="/">LOGIN</a>
           </li>
         </ul>
       </nav>
