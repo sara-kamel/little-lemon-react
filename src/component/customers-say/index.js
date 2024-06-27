@@ -4,7 +4,7 @@ import bruchetta from '../../icons_assets/bruchetta.svg';
 import lemonDessert from '../../icons_assets/lemonDessert.jpg';
 export default function CustomersSay() {
   return (
-    <section className="customersS-say">
+    <section className="customers-say">
       <article className="section-part-one">
         <h1>
           <b>This weeks Specials!</b>
