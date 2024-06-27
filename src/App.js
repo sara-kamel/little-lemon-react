@@ -1,20 +1,12 @@
 import './App.css';
 import Header from './component/header';
-import HeroSection from './component/hero-section';
-import Highlights from './component/highlights';
-import Testimonials from './component/testimonials';
-import About from './component/about';
 import Footer from './component/footer';
+import HomePage from './component/home-page';
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <HeroSection />
-        <Highlights />
-        <Testimonials />
-        <About />
-      </main>
+      <HomePage />
       <Footer />
     </>
   );
