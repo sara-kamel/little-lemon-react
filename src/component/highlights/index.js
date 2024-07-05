@@ -32,7 +32,9 @@ export default function Highlights () {
               Chicago-style feta cheese, garnished with crunchy garlic and
               rosemary croutons.
             </p>
-            <h3>Order a delivery</h3>
+            <h3>
+              Order a delivery <FaShippingFast size={15} color='black' />
+            </h3>
           </div>
         </div>
         <div className='dish-card'>
@@ -53,7 +55,9 @@ export default function Highlights () {
               Our Bruschetta is made from grilled bread that has been smeared
               with garlic and seasoned with salt and olive oil.
             </p>
-            <h3>Order a delivery</h3>
+            <h3>
+              Order a delivery <FaShippingFast size={15} color='black' />
+            </h3>
           </div>
         </div>
         <div className='dish-card'>
