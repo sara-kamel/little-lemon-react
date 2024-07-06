@@ -4,18 +4,6 @@ import './styles.css'
 export default function About () {
   return (
     <section className='about-section'>
-      <article className='pictures-section'>
-        <img
-          className='picture-one'
-          src={MarioAndAdrianA}
-          alt='mario and andrian'
-        />
-        <img
-          className='picture-two'
-          src={MarioAndAdrianB}
-          alt='mario and andrian'
-        />
-      </article>
       <article className='information-section'>
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
@@ -30,6 +18,18 @@ export default function About () {
           varius augue id tempus ultricies. Mauris suscipit porta odio, et
           pretium nibh scelerisque ut.
         </p>
+      </article>
+      <article className='pictures-section'>
+        <img
+          className='picture-one'
+          src={MarioAndAdrianA}
+          alt='mario and andrian'
+        />
+        <img
+          className='picture-two'
+          src={MarioAndAdrianB}
+          alt='mario and andrian'
+        />
       </article>
     </section>
   )

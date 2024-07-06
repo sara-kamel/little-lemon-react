@@ -4,9 +4,16 @@
   gap: 20px;
   padding: 10px;
   justify-content: center;
+  margin-bottom: 85px;
 }
 .information-section {
-  width: 100%;
+  width: 90%;
+  margin: 10px;
+  text-align: center;
+  text-align: justify;
+}
+.information-section h1 {
+  font-size: 24pt;
 }
 
 .pictures-section {
@@ -18,15 +25,58 @@
   height: 200px;
 }
 .pictures-section img {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
 }
 .pictures-section .picture-one {
   position: absolute;
-  left: 50%;
+  left: 35%;
 }
-.pictures-section .picture-two {
+.picture-two {
   position: inherit;
-  left: 20%;
-  top: 30%;
+  right: 30%;
+  top: 50%;
+  bottom: 0;
+  left: -10%;
+}
+
+@media screen and (min-width: 700px) {
+  .about-section {
+    gap: 60px;
+    flex-direction: row;
+  }
+  .information-section {
+    width: 50%;
+    margin-top: 60px;
+  }
+  .pictures-section {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 950px) {
+  .about-section {
+    margin: 35px;
+  }
+  .information-section h1 {
+    font-size: 40pt;
+    margin-bottom: 0;
+  }
+  .information-section h2 {
+    margin-top: 0;
+    font-size: 24pt;
+  }
+  .pictures-section {
+    margin-top: 0;
+    width: 20%;
+  }
+  .pictures-section img {
+    width: 250px;
+    height: 250px;
+  }
+  .picture-two {
+    right: 29%;
+    top: 81%;
+    bottom: 0;
+    left: -28%;
+  }
 }
