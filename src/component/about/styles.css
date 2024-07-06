@@ -1,0 +1,32 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+.information-section {
+  width: 100%;
+}
+
+.pictures-section {
+  float: right;
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+  height: 200px;
+}
+.pictures-section img {
+  width: 120px;
+  height: 120px;
+}
+.pictures-section .picture-one {
+  position: absolute;
+  left: 50%;
+}
+.pictures-section .picture-two {
+  position: inherit;
+  left: 20%;
+  top: 30%;
+}
