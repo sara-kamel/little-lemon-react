@@ -8,22 +8,22 @@ export default function Header () {
       <nav>
         <ul>
           <li>
-            <Link to='/'>HOME</Link>
+            <Link to='/home'>HOME</Link>
           </li>
           <li>
-            <a href='/'>ABOUT</a>
+            <Link to='/home/about'>ABOUT</Link>
           </li>
           <li>
-            <a href='/'>MENU</a>
+            <Link to='/home/menu'>MENU</Link>
           </li>
           <li>
-            <a href='/'>RESERVATIONS</a>
+            <Link to='/home/reserve'>RESERVATIONS</Link>
           </li>
           <li>
-            <a href='/'>ORDER ONLINE</a>
+            <Link to='/home/menu'>ORDER ONLINE</Link>
           </li>
           <li>
-            <a href='/'>LOGIN</a>
+            <Link to='/'>LOGIN</Link>
           </li>
         </ul>
       </nav>
