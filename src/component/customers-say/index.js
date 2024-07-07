@@ -1,5 +1,5 @@
 import { IoStarSharp } from 'react-icons/io5'
-import './styles.css'
+import '../customers-say/styles.css'
 export default function CustomersSay () {
   return (
     <section className='customers-say'>

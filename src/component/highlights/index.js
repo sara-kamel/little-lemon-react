@@ -1,4 +1,4 @@
-import './styles.css'
+import '../hero-section/styles.css'
 import greekSalad from '../../icons_assets/greekSalad.jpg'
 import bruchetta from '../../icons_assets/bruchetta.svg'
 import lemonDessert from '../../icons_assets/lemonDessert.jpg'

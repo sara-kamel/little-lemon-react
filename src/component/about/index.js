@@ -1,6 +1,6 @@
 import MarioAndAdrianA from '../../icons_assets/MarioAndAdrianA.jpg'
 import MarioAndAdrianB from '../../icons_assets/MarioAndAdrianB.jpg'
-import './styles.css'
+import '../about/styles.css'
 export default function About () {
   return (
     <section className='about-section'>

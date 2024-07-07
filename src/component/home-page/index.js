@@ -1,15 +1,15 @@
-import HeroSection from '../hero-section';
-import Highlights from '../highlights';
-import CustomersSay from '../customers-say';
-import About from '../about';
+import HeroSection from '../hero-section'
+import Highlights from '../highlights'
+import CustomersSay from '../customers-say'
+import About from '../about'
 
-export default function HomePage() {
+export default function HomePage () {
   return (
     <main>
       <HeroSection />
       <Highlights />
-      <CustomersSay/>
+      <CustomersSay />
       <About />
     </main>
-  );
+  )
 }
