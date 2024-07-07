@@ -64,6 +64,7 @@
     gap: 20px;
     justify-content: space-evenly;
     align-items: flex-start;
+    margin-bottom: 150px;
   }
   .hero-section img {
     width: 25%;
