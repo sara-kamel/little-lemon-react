@@ -15,6 +15,9 @@
 .information-section h1 {
   font-size: 24pt;
 }
+.information-section p{
+  font-size: 14pt;
+}
 
 .pictures-section {
   float: right;
@@ -55,7 +58,9 @@
 }
 @media screen and (min-width: 950px) {
   .about-section {
-    margin: 35px;
+    margin: 30px;
+    padding: 60px;
+    justify-items: center;
   }
   .information-section h1 {
     font-size: 40pt;
@@ -70,8 +75,8 @@
     width: 20%;
   }
   .pictures-section img {
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 320px;
   }
   .picture-two {
     right: 29%;
