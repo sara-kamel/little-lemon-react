@@ -25,7 +25,7 @@ export default function Highlights () {
           ></div>
           <div className='card-body'>
             <div className='card-body-title'>
-              <h2>Greek Salad</h2> <aside>$ 12.99</aside>
+              <h2>Greek Salad</h2> <aside>$12.99</aside>
             </div>
             <p>
               The famous Greek salad of crispy lettuce, peppers, olives, and our
@@ -49,7 +49,7 @@ export default function Highlights () {
           ></div>
           <div className='card-body'>
             <div className='card-body-title'>
-              <h2> Bruchetta </h2> <aside>$ 5.99</aside>
+              <h2> Bruchetta </h2> <aside>$5.99</aside>
             </div>
             <p>
               Our Bruschetta is made from grilled bread that has been smeared
@@ -72,7 +72,7 @@ export default function Highlights () {
           ></div>
           <div className='card-body'>
             <div className='card-body-title'>
-              <h2> Lemon dessert</h2> <aside>$ 5.00 </aside>
+              <h2> Lemon dessert</h2> <aside>$5.00 </aside>
             </div>
             <p>
               This comes straight from grandma's recipe book, every last

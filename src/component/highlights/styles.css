@@ -63,6 +63,9 @@
 }
 
 @media screen and (min-width: 600px) {
+  .Highlights {
+    margin: 20px;
+  }
   .section-part-two {
     display: flex;
     flex-direction: row;
