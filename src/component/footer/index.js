@@ -14,7 +14,7 @@ export default function Footer () {
         <h1>Navigation</h1>
         <ul>
           <li>
-            <a href='#'>HOME</a>
+            <Link to='/'>HOME</Link>
           </li>
           <li>
             <Link to='/home/about'>ABOUT</Link>
@@ -23,7 +23,7 @@ export default function Footer () {
             <Link to='/home/menu'>MENU</Link>
           </li>
           <li>
-            <Link to='/home/reserve'>RESERVATIONS</Link>
+            <Link to='/reserve-table'>RESERVATIONS</Link>
           </li>
           <li>
             <Link to='/home/menu'>ORDER ONLINE</Link>

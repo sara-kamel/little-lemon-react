@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import restauranfood from '../../icons_assets/restauranfood.jpg'
 import '../hero-section/styles.css'
 export default function HeroSection () {
@@ -10,7 +11,7 @@ export default function HeroSection () {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <a href='/'>Reserve a Table</a>
+        <Link to='/reserve-table'>Reserve a Table</Link>
       </article>
       <img src={restauranfood} alt='food dish' />
     </section>

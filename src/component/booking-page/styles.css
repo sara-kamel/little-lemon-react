@@ -1,0 +1,13 @@
+.guests-field {
+  padding: 20px;
+  border-radius: 4px;
+  font-size: 12pt;
+  border: 1px solid #8080807a;
+}
+.guests-field:hover {
+  border: 1px solid rgb(24, 24, 31);
+}
+
+.guests-field:focus-visible {
+  outline-color: rgb(27, 134, 221) !important;
+}

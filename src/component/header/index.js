@@ -17,7 +17,7 @@ export default function Header () {
             <Link to='/home/menu'>MENU</Link>
           </li>
           <li>
-            <Link to='/home/reserve'>RESERVATIONS</Link>
+            <Link to='/reserve-table'>RESERVATIONS</Link>
           </li>
           <li>
             <Link to='/home/menu'>ORDER ONLINE</Link>

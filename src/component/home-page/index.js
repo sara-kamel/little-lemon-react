@@ -4,7 +4,7 @@ import CustomersSay from '../customers-say'
 import About from '../about'
 export default function HomePage () {
   return (
-    <main id='#'>
+    <main>
       <HeroSection />
       <Highlights />
       <CustomersSay />

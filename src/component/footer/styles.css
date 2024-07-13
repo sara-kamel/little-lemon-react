@@ -4,6 +4,7 @@
   align-content: center;
   padding-top: 50px;
   margin-bottom: 50px;
+  margin-top: 30px;
   gap: 10px;
   border-top: 8px solid #495e57;
   text-align: center;
@@ -31,7 +32,6 @@
 }
 @media screen and (min-width: 600px) {
   .footer {
-    margin: 10px;
     flex-direction: row;
     justify-content: center;
     gap: 40px;
