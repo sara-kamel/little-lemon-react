@@ -2,26 +2,25 @@ import { useState } from 'react'
 import dayjs from 'dayjs'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { Box, Select, FormControl, InputLabel } from '@mui/material'
+import {
+  Box,
+  Select,
+  FormControl,
+  InputLabel,
+  Button,
+  Stack
+} from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { DemoItem } from '@mui/x-date-pickers/internals/demo'
 import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
-const avalibleTimes = ['2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00']
 
-export default function BookingForm () {
-  const [date, setDate] = useState(dayjs())
+export default function BookingForm ({ avalibleTimes, dispatch }) {
+  const [date, setDate] = useState()
   const [time, setTime] = useState('')
   const [occasion, setOccasion] = useState('')
+  const [guests, setGuests] = useState(1)
 
-  const handleChange = event => {
-    setTime(event.target.value)
-  }
-
-  // const errorMassege = (
-  //   <div style={{ color: 'red' }}>please filled the field</div>
-  // )
-  const today = dayjs()
   const tomorrow = dayjs().add(1, 'day')
   return (
     <>
@@ -33,7 +32,7 @@ export default function BookingForm () {
                 label='Date'
                 value={date}
                 onChange={newValue => setDate(newValue)}
-                defaultValue={today}
+                defaultValue={tomorrow}
                 minDate={tomorrow}
                 views={['year', 'month', 'day']}
               />
@@ -42,28 +41,36 @@ export default function BookingForm () {
         </Box>
         <Box
           sx={{
-            minWidth: 270,
+            maxWidth: 270,
             display: 'flex',
             gap: 3,
             flexDirection: 'column'
           }}
         >
-          <FormControl fullWidth>
-            <InputLabel id='demo-simple-select-label'>Time</InputLabel>
-            <Select
-              labelId='demo-simple-select-label'
-              id='demo-simple-select'
-              value={time}
-              label='Time'
-              onChange={handleChange}
-            >
-              {avalibleTimes.map(time => (
-                <MenuItem kay={time.id} value={time}>
-                  {time} pm
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+          <Button
+            variant='contained'
+            onClick={() => dispatch('avalible-times')}
+          >
+            Check avalible times
+          </Button>
+          <Stack
+            direction='row'
+            sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+          >
+            {avalibleTimes.map(hour => (
+              <Button
+                onClick={() => {
+                  setTime(hour)
+                  console.log(time, hour)
+                }}
+                kay={hour.id}
+                value={hour}
+                variant={hour === time ? 'contained' : 'outlined'}
+              >
+                {hour} pm
+              </Button>
+            ))}
+          </Stack>
           <FormControl fullWidth>
             <InputLabel id='demo-simple-select-label'>Occasion</InputLabel>
             <Select
@@ -80,10 +87,23 @@ export default function BookingForm () {
           <input
             className='guests-field'
             type='number'
+            value={guests}
             min={1}
             max={10}
             placeholder='Number of guests'
+            onChange={e => {
+              setGuests(e.target.value)
+            }}
           />
+          <Button
+            type='submit'
+            variant='contained'
+            onClick={() => {
+              console.log(date, time, occasion, guests)
+            }}
+          >
+            Submit
+          </Button>
         </Box>
       </Box>
     </>
