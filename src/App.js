@@ -8,10 +8,18 @@ import About from './component/about'
 import { Route, Routes } from 'react-router-dom'
 import BookingPage from './component/booking-page'
 
-const initializeTimes = ['2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00']
+const initializeTimes = () => [
+  '2:00',
+  '3:00',
+  '4:00',
+  '5:00',
+  '6:00',
+  '7:00',
+  '8:00'
+]
 const avalibleTimes = ['2:30', '4:30', '6:30']
 
-const reducer = (state, action) => {
+const updateTimes = (state, action) => {
   switch (action) {
     case 'avalible-times':
       return avalibleTimes
@@ -21,7 +29,7 @@ const reducer = (state, action) => {
 }
 
 function App () {
-  const [times, dispatch] = useReducer(reducer, initializeTimes)
+  const [times, dispatch] = useReducer(updateTimes, [], initializeTimes)
   return (
     <>
       <Header />

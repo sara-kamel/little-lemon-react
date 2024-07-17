@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import BookingForm from './BookingForm'
+import BookingForm from './index.js'
 
 const mockDispatch = jest.fn()
 it('test date label', () => {
