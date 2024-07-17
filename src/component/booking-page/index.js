@@ -15,12 +15,12 @@ import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
 
 export default function BookingForm ({ avalibleTimes, dispatch }) {
-  const [date, setDate] = useState()
+  const [date, setDate] = useState(dayjs())
   const [time, setTime] = useState('')
   const [occasion, setOccasion] = useState('')
   const [guests, setGuests] = useState(1)
-
   const tomorrow = dayjs().add(1, 'day')
+
   return (
     <>
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
@@ -30,19 +30,15 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
             <DatePicker
               label='Date'
               value={date}
-              onChange={newValue => setDate(newValue)}
+              onChange={newValue => {
+                setDate(newValue)
+                dispatch({ type: 'UPDATE_TIMES', date: newValue })
+              }}
               defaultValue={tomorrow}
               minDate={tomorrow}
               views={['year', 'month', 'day']}
             />
           </LocalizationProvider>
-          <Button
-            data-testid='avalible-times'
-            variant='contained'
-            onClick={() => dispatch('avalible-times')}
-          >
-            Check avalible times
-          </Button>
           <Stack
             direction='row'
             sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}

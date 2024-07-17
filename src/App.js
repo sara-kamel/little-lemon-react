@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import Header from './component/header'
 import Footer from './component/footer'
 import HomePage from './component/home-page'
@@ -7,22 +7,18 @@ import Highlights from './component/highlights'
 import About from './component/about'
 import { Route, Routes } from 'react-router-dom'
 import BookingPage from './component/booking-page'
+import dayjs from 'dayjs'
+import { fetchAPI } from './api'
 
-const initializeTimes = () => [
-  '2:00',
-  '3:00',
-  '4:00',
-  '5:00',
-  '6:00',
-  '7:00',
-  '8:00'
-]
-const avalibleTimes = ['2:30', '4:30', '6:30']
+const initializeTimes = () => {
+  const today = new Date()
+  return fetchAPI(today)
+}
 
 const updateTimes = (state, action) => {
-  switch (action) {
-    case 'avalible-times':
-      return avalibleTimes
+  switch (action.type) {
+    case 'UPDATE_TIMES':
+      return fetchAPI(new Date(action.date))
     default:
       return state
   }
@@ -30,6 +26,7 @@ const updateTimes = (state, action) => {
 
 function App () {
   const [times, dispatch] = useReducer(updateTimes, [], initializeTimes)
+
   return (
     <>
       <Header />
