@@ -11,3 +11,18 @@
 .guests-field:focus-visible {
   outline-color: rgb(27, 134, 221) !important;
 }
+.form{
+  border: 1px solid  #8080807a;
+  padding: 20px;
+}
+@media screen and (min-width: 600px) {
+  .form{
+    width: 60%;
+    padding: 50px;
+  }
+  .form button{
+    width: 30%;
+    padding: 10px;
+    align-self: center;
+  }
+}

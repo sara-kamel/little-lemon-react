@@ -11,7 +11,6 @@ import {
   Stack
 } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { DemoItem } from '@mui/x-date-pickers/internals/demo'
 import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
 
@@ -25,29 +24,28 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
   return (
     <>
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
-        <Box sx={{ minWidth: 270 }}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoItem label='Choose Date'>
-              <DatePicker
-                label='Date'
-                value={date}
-                onChange={newValue => setDate(newValue)}
-                defaultValue={tomorrow}
-                minDate={tomorrow}
-                views={['year', 'month', 'day']}
-              />
-            </DemoItem>
-          </LocalizationProvider>
-        </Box>
         <Box
+          className='form'
           sx={{
-            maxWidth: 270,
+            Width: 270,
             display: 'flex',
             gap: 3,
-            flexDirection: 'column'
+            flexDirection: 'column',
+            '& button': { m: 1 }
           }}
         >
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              label='Date'
+              value={date}
+              onChange={newValue => setDate(newValue)}
+              defaultValue={tomorrow}
+              minDate={tomorrow}
+              views={['year', 'month', 'day']}
+            />
+          </LocalizationProvider>
           <Button
+            data-testid='avalible-times'
             variant='contained'
             onClick={() => dispatch('avalible-times')}
           >
@@ -59,6 +57,7 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
           >
             {avalibleTimes.map(hour => (
               <Button
+                data-testid='times'
                 onClick={() => {
                   setTime(hour)
                   console.log(time, hour)
