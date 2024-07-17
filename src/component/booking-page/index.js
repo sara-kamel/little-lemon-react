@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -14,12 +15,16 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
 
-export default function BookingForm ({ avalibleTimes, dispatch }) {
+export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
+  const navigate = useNavigate()
   const [date, setDate] = useState(dayjs())
   const [time, setTime] = useState('')
   const [occasion, setOccasion] = useState('')
   const [guests, setGuests] = useState(1)
-  const tomorrow = dayjs().add(1, 'day')
+
+  const today = dayjs()
+
+  let bookingData = []
 
   return (
     <>
@@ -34,8 +39,7 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
                 setDate(newValue)
                 dispatch({ type: 'UPDATE_TIMES', date: newValue })
               }}
-              defaultValue={tomorrow}
-              minDate={tomorrow}
+              minDate={today}
               views={['year', 'month', 'day']}
             />
           </LocalizationProvider>
@@ -48,7 +52,6 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
                 data-testid='times'
                 onClick={() => {
                   setTime(hour)
-                  console.log(time, hour)
                 }}
                 kay={hour.id}
                 value={hour}
@@ -87,7 +90,11 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
             type='submit'
             variant='contained'
             onClick={() => {
-              console.log(date, time, occasion, guests)
+              if (date && time && occasion && guests) {
+                bookingData = {date: date, time: time, occasion: occasion, guests: guests}
+                onSubmit(bookingData)
+                navigate('/home/confirmed-booking')
+              } else alert('Please fill all fields')
             }}
           >
             Submit

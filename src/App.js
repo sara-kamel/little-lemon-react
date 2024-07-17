@@ -5,10 +5,10 @@ import HomePage from './component/home-page'
 import HeroSection from './component/hero-section'
 import Highlights from './component/highlights'
 import About from './component/about'
-import { Route, Routes } from 'react-router-dom'
-import BookingPage from './component/booking-page'
-import dayjs from 'dayjs'
-import { fetchAPI } from './api'
+import { Route, Routes} from 'react-router-dom'
+import BookingForm from './component/booking-page'
+import { fetchAPI, submitAPI } from './api'
+import ConfirmedBooking from './ConfirmedBooking'
 
 const initializeTimes = () => {
   const today = new Date()
@@ -26,6 +26,7 @@ const updateTimes = (state, action) => {
 
 function App () {
   const [times, dispatch] = useReducer(updateTimes, [], initializeTimes)
+  const [bookingData, setBookingData] = useState([])
 
   return (
     <>
@@ -37,7 +38,21 @@ function App () {
         <Route path='/home/reserve' element={<HeroSection />} />
         <Route
           path='/reserve-table'
-          element={<BookingPage avalibleTimes={times} dispatch={dispatch} />}
+          element={
+            <BookingForm
+              avalibleTimes={times}
+              dispatch={dispatch}
+              onSubmit={value => {
+                submitAPI(value)
+                setBookingData(value)
+                console.log(value)
+              }}
+            />
+          }
+        />
+        <Route
+          path='/home/confirmed-booking'
+          element={<ConfirmedBooking bookingData={bookingData} />}
         />
       </Routes>
       <Footer />
