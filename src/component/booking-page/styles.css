@@ -1,3 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #8080807a;
+  padding: 20px;
+  width: 270px;
+}
+.form button {
+  margin: 5px;
+}
+
 .guests-field {
   padding: 20px;
   border-radius: 4px;
@@ -11,16 +23,13 @@
 .guests-field:focus-visible {
   outline-color: rgb(27, 134, 221) !important;
 }
-.form{
-  border: 1px solid  #8080807a;
-  padding: 20px;
-}
+
 @media screen and (min-width: 600px) {
-  .form{
+  .form {
     width: 60%;
     padding: 50px;
   }
-  .form button{
+  .form button {
     width: 30%;
     padding: 10px;
     align-self: center;

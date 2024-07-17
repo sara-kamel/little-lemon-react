@@ -8,7 +8,8 @@ import {
   FormControl,
   InputLabel,
   Button,
-  Stack
+  Stack,
+  Typography
 } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
@@ -24,17 +25,9 @@ export default function BookingForm ({ avalibleTimes, dispatch }) {
   return (
     <>
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
-        <Box
-          className='form'
-          sx={{
-            Width: 270,
-            display: 'flex',
-            gap: 3,
-            flexDirection: 'column',
-            '& button': { m: 1 }
-          }}
-        >
+        <Box className='form'>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <InputLabel>Choose Date:</InputLabel>
             <DatePicker
               label='Date'
               value={date}
