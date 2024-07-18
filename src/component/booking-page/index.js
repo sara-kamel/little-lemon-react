@@ -70,8 +70,8 @@ export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
               label='Occasion'
               onChange={e => setOccasion(e.target.value)}
             >
-              <MenuItem value='birthday'>Birthday</MenuItem>
-              <MenuItem value='anniversary'>Anniversary</MenuItem>
+              <MenuItem value='Birthday'>Birthday</MenuItem>
+              <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>
           <InputLabel>Guests Count:</InputLabel>
@@ -91,7 +91,12 @@ export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
             variant='contained'
             onClick={() => {
               if (date && time && occasion && guests) {
-                bookingData = {date: date, time: time, occasion: occasion, guests: guests}
+                bookingData = {
+                  date: date,
+                  time: time,
+                  occasion: occasion,
+                  guests: guests
+                }
                 onSubmit(bookingData)
                 navigate('/home/confirmed-booking')
               } else alert('Please fill all fields')
