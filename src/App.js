@@ -40,7 +40,7 @@ function App () {
           path='/reserve-table'
           element={
             <BookingForm
-              avalibleTimes={times}
+              availableTimes={times}
               dispatch={dispatch}
               onSubmit={value => {
                 submitAPI(value)

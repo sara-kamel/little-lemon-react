@@ -15,7 +15,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
 
-export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
+export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
   const navigate = useNavigate()
   const [date, setDate] = useState(dayjs())
   const [time, setTime] = useState('')
@@ -30,6 +30,7 @@ export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
     <>
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
         <Box className='form'>
+          <h1>Reserve Table</h1>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <InputLabel>Choose Date:</InputLabel>
             <DatePicker
@@ -43,11 +44,12 @@ export default function BookingForm ({ avalibleTimes, dispatch, onSubmit }) {
               views={['year', 'month', 'day']}
             />
           </LocalizationProvider>
+          <InputLabel>Available Times In This Date :</InputLabel>
           <Stack
             direction='row'
             sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
           >
-            {avalibleTimes.map(hour => (
+            {availableTimes.map(hour => (
               <Button
                 data-testid='times'
                 onClick={() => {

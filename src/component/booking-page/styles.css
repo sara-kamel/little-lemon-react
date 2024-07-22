@@ -5,6 +5,12 @@
   border: 1px solid #8080807a;
   padding: 20px;
   width: 270px;
+  margin: 30px;
+  box-shadow: 0px 0px 4px #8080807a;
+}
+.form h1 {
+  text-align: center;
+  color: #495e57;
 }
 .form button {
   margin: 5px;
