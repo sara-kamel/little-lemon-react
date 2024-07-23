@@ -31,9 +31,10 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
         <Box className='form'>
           <h1>Reserve Table</h1>
+          <InputLabel>Choose Date:</InputLabel>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <InputLabel>Choose Date:</InputLabel>
             <DatePicker
+              data-testid='date'
               label='Date'
               value={date}
               onChange={newValue => {
@@ -46,8 +47,15 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           </LocalizationProvider>
           <InputLabel>Available Times In This Date :</InputLabel>
           <Stack
+            name='time'
             direction='row'
-            sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+            border={!time ? ' 1px solid red' : ' 1px solid green'}
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              padding: '20px'
+            }}
           >
             {availableTimes.map(hour => (
               <Button
@@ -63,19 +71,23 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               </Button>
             ))}
           </Stack>
+
           <FormControl fullWidth>
             <InputLabel id='demo-simple-select-label'>Occasion</InputLabel>
             <Select
+              name='occasion'
               labelId='demo-simple-select-label'
               id='demo-simple-select'
               value={occasion}
               label='Occasion'
               onChange={e => setOccasion(e.target.value)}
+              error={!occasion ? true : false}
             >
               <MenuItem value='Birthday'>Birthday</MenuItem>
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>
+
           <InputLabel>Guests Count:</InputLabel>
           <input
             className='guests-field'
@@ -91,6 +103,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           <Button
             type='submit'
             variant='contained'
+            disabled={date && time && occasion && guests ? false : true}
             onClick={() => {
               if (date && time && occasion && guests) {
                 bookingData = {

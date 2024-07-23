@@ -45,7 +45,6 @@ function App () {
               onSubmit={value => {
                 submitAPI(value)
                 setBookingData(value)
-                console.log(value)
               }}
             />
           }
