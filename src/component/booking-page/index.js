@@ -9,7 +9,8 @@ import {
   FormControl,
   InputLabel,
   Button,
-  Stack
+  Stack,
+  Typography
 } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
@@ -21,7 +22,6 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
   const [time, setTime] = useState('')
   const [occasion, setOccasion] = useState('')
   const [guests, setGuests] = useState(1)
-
   const today = dayjs()
 
   let bookingData = []
@@ -71,7 +71,12 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               </Button>
             ))}
           </Stack>
-
+          {!time && (
+            <span style={{ color: 'red', textAlign: 'center' }}>
+              Time is Required
+            </span>
+          )}{' '}
+          <br />
           <FormControl fullWidth>
             <InputLabel id='demo-simple-select-label'>Occasion</InputLabel>
             <Select
@@ -87,7 +92,11 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>
-
+          {!occasion && (
+            <span style={{ color: 'red', textAlign: 'center' }}>
+              Occasion is Required
+            </span>
+          )}
           <InputLabel>Guests Count:</InputLabel>
           <input
             className='guests-field'
