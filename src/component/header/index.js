@@ -3,7 +3,7 @@ import Logo from '../../icons_assets/Logo.svg'
 import '../header/styles.css'
 export default function Header () {
   return (
-    <header className='header'>
+    <header className='header' role="navigation">
       <img src={Logo} alt='little lemon logo' />
       <nav>
         <ul>

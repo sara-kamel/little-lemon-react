@@ -9,23 +9,30 @@ import {
   FormControl,
   InputLabel,
   Button,
-  Stack,
-  Typography
+  Stack
 } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
 import '../booking-page/styles.css'
+
+let guestsNumber = []
+for (let i = 1; i <= 50; i++) {
+  guestsNumber.push(`${i}`)
+}
 
 export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
   const navigate = useNavigate()
   const [date, setDate] = useState(dayjs())
   const [time, setTime] = useState('')
   const [occasion, setOccasion] = useState('')
-  const [guests, setGuests] = useState(1)
+  const [guests, setGuests] = useState('')
   const today = dayjs()
 
   let bookingData = []
 
+  const errorMessage = message => {
+    return <span style={{ color: 'red', textAlign: 'center' }}>{message}</span>
+  }
   return (
     <>
       <Box display='flex' flexDirection='column' gap={3} alignItems='center'>
@@ -71,18 +78,13 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               </Button>
             ))}
           </Stack>
-          {!time && (
-            <span style={{ color: 'red', textAlign: 'center' }}>
-              Time is Required
-            </span>
-          )}{' '}
+          {!time && errorMessage('Time is Required')}
           <br />
           <FormControl fullWidth>
-            <InputLabel id='demo-simple-select-label'>Occasion</InputLabel>
+            <InputLabel id='occasion'>Occasion</InputLabel>
             <Select
-              name='occasion'
-              labelId='demo-simple-select-label'
-              id='demo-simple-select'
+              labelId='occasion'
+              // id='demo-simple-select'
               value={occasion}
               label='Occasion'
               onChange={e => setOccasion(e.target.value)}
@@ -92,25 +94,27 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>
-          {!occasion && (
-            <span style={{ color: 'red', textAlign: 'center' }}>
-              Occasion is Required
-            </span>
-          )}
-          <InputLabel>Guests Count:</InputLabel>
-          <input
-            className='guests-field'
-            type='number'
-            value={guests}
-            min={1}
-            max={10}
-            placeholder='Number of guests'
-            onChange={e => {
-              setGuests(e.target.value)
-            }}
-          />
+          {!occasion && errorMessage('Occasion is Required')}
+          <FormControl fullWidth>
+            <InputLabel id='guests'>Guests</InputLabel>
+            <Select
+              labelId='guests'
+              value={guests}
+              label='guests'
+              onChange={e => setGuests(e.target.value)}
+              error={!guests ? true : false}
+            >
+              {guestsNumber.map(num => (
+                <MenuItem key={num} value={num}>
+                  {num}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {!guests && errorMessage('Guests is Required')}
           <Button
             type='submit'
+            aria-label='Submit'
             variant='contained'
             disabled={date && time && occasion && guests ? false : true}
             onClick={() => {
