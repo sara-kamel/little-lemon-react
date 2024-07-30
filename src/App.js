@@ -10,7 +10,6 @@ import BookingForm from './component/booking-form'
 import { fetchAPI, submitAPI } from './api'
 import ConfirmedBooking from './ConfirmedBooking'
 
-
 export const initializeTimes = () => {
   const today = new Date()
   return fetchAPI(today)

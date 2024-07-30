@@ -47,6 +47,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               onChange={newValue => {
                 setDate(newValue)
                 dispatch({ type: 'UPDATE_TIMES', date: newValue })
+                setTime('')
               }}
               minDate={today}
               views={['year', 'month', 'day']}
@@ -90,9 +91,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               onChange={e => setOccasion(e.target.value)}
               error={!occasion ? true : false}
             >
-              <MenuItem value='Birthday'>
-                Birthday
-              </MenuItem>
+              <MenuItem value='Birthday'>Birthday</MenuItem>
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>

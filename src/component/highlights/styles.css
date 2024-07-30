@@ -7,7 +7,7 @@
 }
 .section-part-one {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .section-part-one a {
