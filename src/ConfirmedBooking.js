@@ -22,7 +22,7 @@ export default function ConfirmedBooking ({ bookingData }) {
         <Typography variant='h6'>Time :{bookingData.time} </Typography>
         <Typography variant='h6'>Occasion : {bookingData.occasion} </Typography>
         <Typography variant='h6'>
-          Guests Count :{bookingData.guests}{' '}
+          Guests Count : {bookingData.guests}
         </Typography>
       </Box>
     </>

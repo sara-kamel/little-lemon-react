@@ -6,24 +6,29 @@
   flex-wrap: wrap;
   background: rgb(237, 239, 238);
   padding: 7px;
+  gap: 10px;
 }
 .header ul {
   display: flex;
-  gap: 30px;
+  gap: 9px;
   list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 .header a {
-  color: #495e57;
+  font-size: 9pt;
   text-decoration: none;
+  color: #333333;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 500px) {
+  .header {
+    gap: 40px;
+  }
   .header ul {
-    gap: 12px;
-    margin-left: 0;
-    padding-left: 0;
+    gap: 30px;
   }
   .header a {
-    font-size: x-small;
+    font-size: 12pt;
   }
 }
