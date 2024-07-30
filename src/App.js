@@ -6,18 +6,20 @@ import HeroSection from './component/hero-section'
 import Highlights from './component/highlights'
 import About from './component/about'
 import { Route, Routes } from 'react-router-dom'
-import BookingForm from './component/booking-page'
+import BookingForm from './component/booking-form'
 import { fetchAPI, submitAPI } from './api'
 import ConfirmedBooking from './ConfirmedBooking'
 
-const initializeTimes = () => {
+
+export const initializeTimes = () => {
   const today = new Date()
   return fetchAPI(today)
 }
 
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
+      if (!action.date) return state
       return fetchAPI(new Date(action.date))
     default:
       return state

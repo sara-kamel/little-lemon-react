@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MenuItem } from '@mui/material'
-import '../booking-page/styles.css'
+import './styles.css'
 
 let guestsNumber = []
 for (let i = 1; i <= 50; i++) {
@@ -74,7 +74,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
                 value={hour}
                 variant={hour === time ? 'contained' : 'outlined'}
               >
-                {hour} pm
+                {hour}
               </Button>
             ))}
           </Stack>
@@ -84,13 +84,15 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
             <InputLabel id='occasion'>Occasion</InputLabel>
             <Select
               labelId='occasion'
-              // id='demo-simple-select'
+              data-testid='occasion'
               value={occasion}
               label='Occasion'
               onChange={e => setOccasion(e.target.value)}
               error={!occasion ? true : false}
             >
-              <MenuItem value='Birthday'>Birthday</MenuItem>
+              <MenuItem value='Birthday'>
+                Birthday
+              </MenuItem>
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
             </Select>
           </FormControl>
