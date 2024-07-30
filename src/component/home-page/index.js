@@ -4,7 +4,7 @@ import CustomersSay from '../customers-say'
 import About from '../about'
 export default function HomePage () {
   return (
-    <main>
+    <main role='main'>
       <HeroSection />
       <Highlights />
       <CustomersSay />

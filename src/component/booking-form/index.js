@@ -67,6 +67,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           >
             {availableTimes.map(hour => (
               <Button
+                role='button'
                 data-testid='time'
                 onClick={() => {
                   setTime(hour)
@@ -84,6 +85,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           <FormControl fullWidth>
             <InputLabel id='occasion'>Occasion</InputLabel>
             <Select
+              aria-required='true'
               labelId='occasion'
               data-testid='occasion'
               value={occasion}
@@ -99,6 +101,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           <FormControl fullWidth>
             <InputLabel id='guests'>Guests</InputLabel>
             <Select
+              aria-required='true'
               labelId='guests'
               value={guests}
               label='Guests'
@@ -114,6 +117,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           </FormControl>
           {!guests && errorMessage('Guests is Required')}
           <Button
+            role='button'
             type='submit'
             aria-label='Submit'
             variant='contained'
