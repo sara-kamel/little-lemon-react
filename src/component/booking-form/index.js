@@ -67,7 +67,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
           >
             {availableTimes.map(hour => (
               <Button
-                data-testid='times'
+                data-testid='time'
                 onClick={() => {
                   setTime(hour)
                 }}
@@ -101,7 +101,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
             <Select
               labelId='guests'
               value={guests}
-              label='guests'
+              label='Guests'
               onChange={e => setGuests(e.target.value)}
               error={!guests ? true : false}
             >
