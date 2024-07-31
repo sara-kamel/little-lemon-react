@@ -29,7 +29,7 @@ Little Lemon React is a restaurant website created as part of a course project. 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/little-lemon-react.git
+   git clone https://github.com/sara-kamel/little-lemon-react.git
    ```
 2. Navigate to the project directory:
    ```bash
