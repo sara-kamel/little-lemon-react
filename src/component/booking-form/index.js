@@ -92,6 +92,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
               label='Occasion'
               onChange={e => setOccasion(e.target.value)}
               error={!occasion ? true : false}
+              required
             >
               <MenuItem value='Birthday'>Birthday</MenuItem>
               <MenuItem value='Anniversary'>Anniversary</MenuItem>
@@ -132,7 +133,7 @@ export default function BookingForm ({ availableTimes, dispatch, onSubmit }) {
                 }
                 onSubmit(bookingData)
                 navigate('/home/confirmed-booking')
-              } else alert('Please fill all fields')
+              }
             }}
           >
             Submit
